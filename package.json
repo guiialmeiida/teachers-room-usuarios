@@ -2,13 +2,15 @@
   "name": "teachers-room-usuarios",
   "version": "1.0.0",
   "description": "Api para cadastro e login de usuarios",
-  "main": "index.js",
+  "main": "./src/app.js",
   "scripts": {
     "start": "nodemon app.js"
   },
   "author": "Guilherme Almeida",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongodb": "^3.5.7",
