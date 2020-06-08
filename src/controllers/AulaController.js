@@ -5,7 +5,7 @@ const cors = require('cors');
 const router = express.Router();
 router.use(cors());
 
-router.post('/createClass', async (req, res) => {
+router.post('/createActivitie', async (req, res) => {
     const { name } = req.body;
 
     try {
@@ -23,16 +23,43 @@ router.post('/createClass', async (req, res) => {
     }
 });
 
-router.get('/listClass', async (req, res) => {
+router.get('/listActivities', async (req, res) => {
 
     try {
-        const listClass = await Class.find();
+        const listActivities = await Class.find();
 
-        return res.send(listClass);
+        return res.send(listActivities);
         
     } catch (err) {
         return res.status(400).send({ error: 'Falha ao consultar lista de atividades'});
     }
-})
+});
+
+router.post('/filteredActivitie', async (req, res) => {
+    const { studentClass } = req.body;
+
+    try {
+        const filteredClass = await Class.find({ studentClass });
+
+        return res.send(filteredClass);
+        
+    } catch (err) {
+        return res.status(400).send({ error: 'Falha ao consultar lista de atividades'});
+    }
+});
+
+router.post('/deleteActivitie', async (req, res) => {
+    const { _id } = req.body;
+
+    try {
+         await Class.findByIdAndDelete({ _id });
+
+        return res.send('sucesso!');
+        
+    } catch (err) {
+        console.log(err);
+        return res.status(400).send({ error: 'Falha ao deletar atividade'});
+    }
+});
 
 module.exports = app => app.use('/class', router);

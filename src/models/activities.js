@@ -10,7 +10,7 @@ const AulaSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    team: {
+    studentClass: {
         type: Number,
         required: true,
     },

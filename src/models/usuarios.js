@@ -25,6 +25,9 @@ const UserSchema = new mongoose.Schema({
     typeUser: {
         type: String,
         required: true
+    },
+    studentClass: {
+        type: String
     }
 },
 {
