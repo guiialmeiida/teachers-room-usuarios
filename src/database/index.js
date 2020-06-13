@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://teachers:almeida22@mongo_teachers-usuario:27017/teachers-usuario', {
+mongoose.connect('mongodb+srv://teachers:leEY8JMLFCPC5kuE@cluster0-ezfgq.mongodb.net/TeachersRoom?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true
