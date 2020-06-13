@@ -2,9 +2,9 @@
   "name": "teachers-room-usuarios",
   "version": "1.0.0",
   "description": "Api para cadastro e login de usuarios",
-  "main": "./src/app.js",
+  "main": "./index.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node index.js"
   },
   "author": "Guilherme Almeida",
   "license": "ISC",
